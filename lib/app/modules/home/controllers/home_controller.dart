@@ -1,22 +1,35 @@
+import 'dart:convert';
+
 import 'package:get/get.dart';
+import 'package:skripsi_yoi/app/data/models/movie_model.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:http/http.dart' as http;
 
 class HomeController extends GetxController {
-  List listData = [].obs;
+  late var invoiceData = Rx<MovieModel?>(null);
   void onInit() {
-    //  movieProvider
-    //  super.onInit();
+     super.onInit();
   }
 
-  void launchURL(String url) async {
-    //const url = 'https://www.youtube.com/watch?v=MJPdA2xWfII';
+  void fetchAll() async {
+    try {
+      var response = http.get(
+        Uri.parse("url")
+      );
 
-    // if (await canLaunch(url)) {
-    //   await launch(url);
-    // } else {
-    //   throw 'Could not launch $url';
-    // }
+      if (response.statusCode == 200) {
+        MovieModel result = MovieModel.fromJson(jsonDecode(response.body));
+        invoiceData.value = result;
+      } else {
 
+      }
+
+    } catch(e){
+      print(e);
+    }
+  }
+
+  void launchTrailer(String url) async {
     try {
       await launch(url);
     } catch (e) {

@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-import '../modules/detailMovie/bindings/detail_movie_binding.dart';
-import '../modules/detailMovie/views/detail_movie_view.dart';
+import '../modules/detail_movie/bindings/detail_movie_binding.dart';
+import '../modules/detail_movie/views/detail_movie_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';

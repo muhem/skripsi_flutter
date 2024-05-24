@@ -91,7 +91,7 @@ class HomeView extends GetView<HomeController> {
                           Text('Rating: ${movie['rating']}'),
                           ElevatedButton(
                             onPressed: () =>
-                                controller.launchURL(movie['trailer']!),
+                                controller.launchTrailer(movie['trailer']!),
                             child: Text('Tonton'),
                           ),
                         ],
